@@ -84,6 +84,8 @@ public class HelloFragment extends Fragment {
 		return result;
 	}
 
+
+
 	@Override
 	public void onPause() {
 		super.onPause();
@@ -91,6 +93,14 @@ public class HelloFragment extends Fragment {
 		ImageView blinkyView = (ImageView) getView().findViewById(R.id.imageView);
 		AnimationDrawable anim = (AnimationDrawable) blinkyView.getDrawable();
 		anim.stop();
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		ImageView blinkyView = (ImageView) getView().findViewById(R.id.imageView);
+		AnimationDrawable anim = (AnimationDrawable) blinkyView.getDrawable();
+		anim.start();
 	}
 
 	public void onStartGameButtonPushed(View v) {
